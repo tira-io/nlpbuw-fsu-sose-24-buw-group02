@@ -4,6 +4,18 @@ from joblib import load
 from tira.rest_api_client import Client
 from tira.third_party_integrations import get_output_directory
 
+def custom_preprocessor(text):
+    # Convert text to lowercase
+    text = text.lower()
+    # Remove punctuation
+    text = "".join([char for char in text if char.isalnum() or char.isspace()])
+    return text
+
+def custom_tokenizer(text):
+    # Split text into words
+    words = text.split()
+    return words
+
 if __name__ == "__main__":
 
     # Load the data
