@@ -133,3 +133,5 @@ if __name__ == "__main__":
 
     # Save the model
     dump(clf, Path(__file__).parent / "model.joblib")
+    dump(char_vectorizer, Path(__file__).parent / "char_vectorizer.joblib")
+    dump(word_vectorizer, Path(__file__).parent / "word_vectorizer.joblib")

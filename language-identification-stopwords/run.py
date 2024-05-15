@@ -80,11 +80,9 @@ if __name__ == "__main__":
 
     # Load the model and make predictions
     model = load(Path(__file__).parent / "model.joblib")
-
-    # Initializing TfidfVectorizer for character n-grams and word n-grams
-    char_vectorizer = TfidfVectorizer(analyzer='char', ngram_range=(1, 3), max_features=5000)
-    word_vectorizer = TfidfVectorizer(analyzer='word', ngram_range=(1, 2), max_features=5000)
-
+    char_vectorizer = load(Path(__file__).parent / "char_vectorizer.joblib")
+    word_vectorizer = load(Path(__file__).parent / "word_vectorizer.joblib")
+    
     # Predict on the validation data
     stopword_features_val = stopword_features(df['text'], stopwords)
     char_features_val = char_vectorizer.transform(df['text'])
