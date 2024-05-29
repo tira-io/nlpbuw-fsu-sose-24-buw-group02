@@ -26,8 +26,8 @@ if __name__ == "__main__":
     # Extract additional features
     df = extract_features(df)
     
-    # Load the trained model
-    model = joblib.load("model.joblib")
+    # Load the model and make predictions
+    model = joblib.load(Path(__file__).parent / "model.joblib")
     
     # Predict using the model
     feature_columns = ["distance", "len_sentence1", "len_sentence2", "word_count1", "word_count2"]
