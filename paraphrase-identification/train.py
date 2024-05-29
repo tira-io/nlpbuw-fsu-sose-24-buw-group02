@@ -1,3 +1,4 @@
+from pathlib import Path
 from tira.rest_api_client import Client
 
 from levenshtein import levenshtein_distance
@@ -59,5 +60,5 @@ if __name__ == "__main__":
     mcc = matthews_corrcoef(y_val, y_pred)
     print(f"Validation MCC: {mcc}")
     
-    # Save the trained model
-    joblib.dump(best_model, "model.joblib")
+    # Save the model
+    joblib.dump(best_model, Path(__file__).parent / "model.joblib")
