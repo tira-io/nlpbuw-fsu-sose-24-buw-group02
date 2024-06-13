@@ -25,7 +25,7 @@ def preprocess_text(text):
 
 # Set up Google Drive API
 SCOPES = ['https://www.googleapis.com/auth/drive.file']
-SERVICE_ACCOUNT_FILE = '/workspaces/nlpbuw-fsu-sose-24-buw-group02/credentials.json'  # Path to your service account key file
+SERVICE_ACCOUNT_FILE = '/workspaces/nlpbuw-fsu-sose-24-buw-group02/summarization/credentials.json'  # Path to your service account key file
 
 credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 drive_service = build('drive', 'v3', credentials=credentials)
